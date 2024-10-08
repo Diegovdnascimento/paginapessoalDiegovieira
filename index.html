@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Diego Vieira</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #000;
+      color: #00ff00;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 1rem;
+    }
+
+    nav ul li a {
+      color: #00ff00;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1, h2 {
+      color: #00ff00;
+    }
+
+    #home, #sobre, #projetos, #contato {
+      display: none;
+    }
+
+    /* Estilizando a seção "Sobre" */
+    .sobre-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #111;
+      padding: 4rem 2rem;
+      border-radius: 10px;
+    }
+
+    .foto-perfil {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-right: 2rem;
+      border: 3px solid #00ff00;
+    }
+
+    .sobre-texto {
+      max-width: 600px;
+    }
+
+    /* Estilizando Habilidades */
+    #habilidades ul {
+      list-style-type: disc;
+      margin-left: 2rem;
+      color: #00ff00;
+    }
+
+    #habilidades ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Estilizando os Projetos */
+    #projetos .projeto {
+      background-color: #111;
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    }
+
+    #projetos h3 {
+      color: #00ff00;
+    }
+
+    #projetos p {
+      color: #ccc;
+    }
+
+    /* Estilizando a Seção de Contato */
+    #contato {
+      text-align: center;
+    }
+
+    #contato p {
+      color: #00ff00;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="mostrarPagina('home')">Home</a></li>
+        <li><a href="#" onclick="mostrarPagina('sobre')">Sobre</a></li>
+        <li><a href="#" onclick="mostrarPagina('projetos')">Projetos</a></li>
+        <li><a href="#" onclick="mostrarPagina('contato')">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Seção Home -->
+  <section id="home">
+    <h1>Olá, seja bem vindo ao meu portfólio</h1>
+    <p>Olá! Sou Diego Vieira, estudante de Ciência da Computação e apaixonado por tecnologia. Estou em constante aprendizado, explorando novas linguagens e desenvolvendo projetos criativos e funcionais. Este portfólio é o espaço onde compartilho minhas habilidades e projetos, desde soluções para o dia a dia até inovações que transformam desafios em oportunidades.</p>
+  </section>
+
+  <!-- Seção Sobre Mim -->
+  <section id="sobre">
+    <div class="sobre-container">
+      <img src="imagens/foto.jpg" alt="Foto de Diego Vieira" class="foto-perfil">
+      <div class="sobre-texto">
+        <h1>Diego Vieira</h1>
+        <p>Tenho 17 anos e estou atualmente cursando ciência da computação, o que tem sido uma experiência incrível e, ao mesmo tempo, desafiadora. A cada semestre percebo o quanto a tecnologia pode impactar a vida das pessoas, e isso me motiva a cada vez mais estar me buscando aprofundar em diversos temas da tecnologia para poder no futuro ajudar a transformar a vida de diversas pessoas. Acredito que a programação vai muito além do código. Quando não estou codificando, gosto de estar praticando esportes, no futuro meu objetivo é me tornar um grande desenvolvedor web</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Projetos -->
+  <section id="projetos">
+    <h2>Projetos</h2>
+    <div class="projeto">
+      <h3>Meu Portfólio</h3>
+      <p>Pagina desenvolvida com o intuito mostrar meus projetos, habilidades e formas de contato</p>
+    </div>
+  </section>
+
+  <!-- Seção de Contato -->
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Email: diegovdnascimento1@gmail.com</p>
+    <p>Instagram: <a href="https://www.instagram.com/diegovieira.n/profilecard/?igsh=MXBvbWZ3MzJ1dnJobg==" target="_blank">@diegovieira.n</a></p>
+    <p>linkedin: <a href="www.linkedin.com/in/diego-vieira-64b1082b6" target="_blank">Diego Vieira</a></p>
+  </section>
+
+  <script>
+    // Função para mostrar a página correta
+    function mostrarPagina(pagina) {
+      // Oculta todas as seções
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('sobre').style.display = 'none';
+      document.getElementById('projetos').style.display = 'none';
+      document.getElementById('contato').style.display = 'none';
+
+      // Exibe a seção selecionada
+      document.getElementById(pagina).style.display = 'block';
+    }
+
+    // Mostra a página inicial ao carregar o site
+    window.onload = function () {
+      mostrarPagina('home');
+    }
+  </script>
+</body>
+</html>
+
+
